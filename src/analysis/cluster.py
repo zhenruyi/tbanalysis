@@ -40,7 +40,7 @@ plt.scatter(rfm_df['frequency'], rfm_df['recency'],
 plt.xlabel('Frequency')
 plt.ylabel('Recency')
 plt.title('User Clustering')
-plt.savefig('cluster_plot.png')
+plt.savefig('../../outputs/figures/cluster_plot.png')
 
 # 保存聚类结果
-rfm_df.to_csv('user_clusters.csv', index=False)
+rfm_df.to_csv('../../data/processed/user_clusters.csv', index=False)

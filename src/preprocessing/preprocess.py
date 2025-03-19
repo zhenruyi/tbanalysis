@@ -25,7 +25,7 @@ df_sampled = df.sample(frac=0.1, random_state=314)
 df_sampled['price'] = np.random.randint(10, 10001, size=len(df_sampled))
 
 # 保存清洗后的数据到CSV文件
-df_sampled.to_csv('UserBehavior_sampled.csv', index=False)
+df_sampled.to_csv('../../data/processed/UserBehavior_sampled.csv', index=False)
 print("清洗后的数据已保存到 UserBehavior_sampled.csv")
 
 # 数据库连接信息
