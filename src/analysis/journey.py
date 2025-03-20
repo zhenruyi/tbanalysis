@@ -8,8 +8,9 @@ from mysql.connector import Error
 
 # 读取原始数据
 # 数据列：user_id, item_id, category_id, behavior, timestamp
-df = pd.read_csv('../../data/processed/UserBehavior_sampled.csv')
+df = pd.read_csv('../../data/processed/sampling.csv')
 df = df[['user_id', 'item_id', 'category_id', 'behavior', 'timestamp']]
+print(df.head(10))
 
 # ==============================================
 # 第一步：数据预处理与行为序列构建
@@ -17,16 +18,18 @@ df = df[['user_id', 'item_id', 'category_id', 'behavior', 'timestamp']]
 
 # 转换时间格式
 df['timestamp'] = pd.to_datetime(df['timestamp'])
+print(df.head(10))
 
 # 按用户分组处理
-df = df.sort_values(['user_id', 'timestamp'])  # 修改排序字段
+df = df.sort_values(['user_id', 'timestamp'])
+print(df.head(10))
 
-# 定义会话超时时间（30分钟）
-SESSION_TIMEOUT = timedelta(minutes=30)
+# 定义会话超时时间
+SESSION_TIMEOUT = timedelta(days=30)
 
 # 生成会话ID
 def generate_session_id(group):
-    # 计算时间差（原 datetime 字段改为 timestamp）
+    # 计算时间差
     time_diff = group['timestamp'].diff()
     # 标记新会话开始的位置（首次行为 或 间隔超过阈值）
     new_session = (time_diff > SESSION_TIMEOUT).astype(int)
@@ -36,25 +39,29 @@ def generate_session_id(group):
 
 # 应用会话分割
 df = df.groupby('user_id', group_keys=False).apply(generate_session_id)
+print(df.head(10))
 
 # 生成行为路径（按会话聚合）
 def get_behavior_sequence(group):
-    return list(group['behavior'])  # behavior 列保持不变
+    return list(group['behavior'])
 
 user_paths = df.groupby(['user_id', 'session_id']).apply(get_behavior_sequence).reset_index()
 user_paths.columns = ['user_id', 'session_id', 'behavior_sequence']
+print(user_paths.head(10))
+print("---------------------------")
 
 # ==============================================
 # 第二步：高频路径挖掘（使用Apriori算法）
 # ==============================================
 
-# 准备事务数据（无需修改）
+# 准备事务数据
 transactions = user_paths['behavior_sequence'].tolist()
 
 # 转换事务数据为矩阵格式
 te = TransactionEncoder()
 te_ary = te.fit(transactions).transform(transactions)
 df_trans = pd.DataFrame(te_ary, columns=te.columns_)
+print(df_trans.head(10))
 
 # 运行Apriori算法（最小支持度设置为2%）
 frequent_itemsets = apriori(df_trans, min_support=0.02, use_colnames=True)
@@ -66,6 +73,7 @@ frequent_paths = frequent_itemsets[frequent_itemsets['length'] >= 2]
 # 展示前10个高频路径
 print("Top 10高频行为路径：")
 print(frequent_paths.sort_values(by='support', ascending=False).head(10))
+print("---------------------------")
 
 # ==============================================
 # 第三步：转化漏斗分析（示例：浏览->加购->购买）
@@ -112,9 +120,9 @@ def mysql_connect():
     try:
         conn = mysql.connector.connect(
             host='localhost',
-            user='your_username',
-            password='your_password',
-            database='your_database'
+            user='root',
+            password='root',
+            database='taobao'
         )
         return conn
     except Error as e:
@@ -127,7 +135,7 @@ conn = mysql_connect()
 if conn:
     # 创建高频路径表
     create_table_sql = """
-    CREATE TABLE IF NOT EXISTS frequent_paths (
+    CREATE TABLE IF NOT EXISTS journey (
         id INT AUTO_INCREMENT PRIMARY KEY,
         itemsets VARCHAR(255),
         support FLOAT,
@@ -140,7 +148,7 @@ if conn:
     # 插入数据
     for _, row in frequent_paths.iterrows():
         insert_sql = """
-        INSERT INTO frequent_paths (itemsets, support, length)
+        INSERT INTO journey (itemsets, support, length)
         VALUES (%s, %s, %s)
         """
         cursor.execute(insert_sql, (
@@ -167,7 +175,7 @@ def generate_sankey_data():
     # 统计转移频率
     transfer_df = pd.DataFrame(transfer_pairs, columns=['source', 'target'])
     sankey_data = transfer_df.groupby(['source', 'target']).size().reset_index(name='value')
-    sankey_data.to_csv('sankey_data.csv', index=False)
+    sankey_data.to_csv('../../data/analytics/sankey_data.csv', index=False)
     print("桑基图数据已保存到 sankey_data.csv")
 
 
@@ -180,5 +188,5 @@ funnel_data = pd.DataFrame({
               step_counts['step2_pv_cart'],
               step_counts['step3_pv_cart_buy']]
 })
-funnel_data.to_csv('funnel_data.csv', index=False)
+funnel_data.to_csv('../../data/analytics/funnel_data.csv', index=False)
 print("漏斗图数据已保存到 funnel_data.csv")

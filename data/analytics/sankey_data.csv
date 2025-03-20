@@ -1,0 +1,17 @@
+source,target,value
+buy,buy,350
+buy,cart,472
+buy,fav,242
+buy,pv,7120
+cart,buy,541
+cart,cart,2654
+cart,fav,470
+cart,pv,22256
+fav,buy,240
+fav,cart,493
+fav,fav,1879
+fav,pv,12440
+pv,buy,7543
+pv,cart,22717
+pv,fav,12192
+pv,pv,415243

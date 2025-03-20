@@ -1,5 +1,4 @@
-
-
+.env
 data/raw/UserBehavior.csv
 data/processed/UserBehavior_sampled.csv
 .ipynb_checkpoints/

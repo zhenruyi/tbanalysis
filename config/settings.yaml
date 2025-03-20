@@ -1,0 +1,16 @@
+database:
+  dialect: mysql
+  driver: pymysql
+  username: !env ${DB_USER}
+  password: !env ${DB_PASSWORD}
+  host: localhost
+  port: 3306
+  dbname: taobao
+
+paths:
+  raw_data: data/raw/UserBehavior.csv
+  processed_data: data/processed/sampling.csv
+
+sampling:
+  frac: 0.1
+  random_state: 42

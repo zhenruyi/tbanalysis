@@ -1,0 +1,1014 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.25.0114.1153                               -->
+<workbook original-version='18.1' source-build='2024.3.3 (20243.25.0114.1153)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='clusters' inline='true' name='federated.1mf4fen0q6p3y4172lyvc0l6wdpg' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='clusters' name='textscan.0jf93lf16y714a15sycvz03s8610'>
+            <connection class='textscan' directory='C:/Documents/PyFiles/tbanalysis/data/analytics' filename='clusters.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0jf93lf16y714a15sycvz03s8610' name='clusters.csv' table='[clusters#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+            <column datatype='integer' name='user_id' ordinal='0' />
+            <column datatype='integer' name='recency' ordinal='1' />
+            <column datatype='integer' name='frequency' ordinal='2' />
+            <column datatype='integer' name='monetary' ordinal='3' />
+            <column datatype='integer' name='cluster' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[clusters.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;zh_Hans_CN&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¥&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;zh_CN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[user_id]</local-name>
+            <parent-name>[clusters.csv]</parent-name>
+            <remote-alias>user_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[clusters.csv_5E4BEAB2038449E8BEC2BB5C5572454B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>recency</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[recency]</local-name>
+            <parent-name>[clusters.csv]</parent-name>
+            <remote-alias>recency</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[clusters.csv_5E4BEAB2038449E8BEC2BB5C5572454B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frequency</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frequency]</local-name>
+            <parent-name>[clusters.csv]</parent-name>
+            <remote-alias>frequency</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[clusters.csv_5E4BEAB2038449E8BEC2BB5C5572454B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>monetary</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[monetary]</local-name>
+            <parent-name>[clusters.csv]</parent-name>
+            <remote-alias>monetary</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[clusters.csv_5E4BEAB2038449E8BEC2BB5C5572454B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cluster</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cluster]</local-name>
+            <parent-name>[clusters.csv]</parent-name>
+            <remote-alias>cluster</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[clusters.csv_5E4BEAB2038449E8BEC2BB5C5572454B]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='clusters.csv' datatype='table' name='[__tableau_internal_object_id__].[clusters.csv_5E4BEAB2038449E8BEC2BB5C5572454B]' role='measure' type='quantitative' />
+      <column caption='Behavior' datatype='string' name='[behavior]' role='dimension' type='nominal' />
+      <column caption='Cluster' datatype='integer' name='[cluster]' role='measure' type='quantitative' />
+      <column caption='Frequency' datatype='integer' name='[frequency]' role='measure' type='quantitative' />
+      <column caption='Monetary' datatype='integer' name='[monetary]' role='measure' type='quantitative' />
+      <column caption='Recency' datatype='integer' name='[recency]' role='measure' type='quantitative' />
+      <column caption='User Id (User Clusters.Csv)' datatype='integer' name='[user_id (user_clusters.csv)]' role='dimension' type='ordinal' />
+      <column caption='User Id' datatype='integer' name='[user_id]' role='dimension' type='ordinal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='zh_CN' class='hyper' dbname='C:/Users/zhenruyi/AppData/Local/Temp/TableauTemp/#TableauTemp_15stdi71xtnm3a129dhp90dnk95h.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/20/2025 05:49:07 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>user_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[user_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>user_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>clusters.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>165675</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[clusters.csv_5E4BEAB2038449E8BEC2BB5C5572454B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>recency</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[recency]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>recency</remote-alias>
+              <ordinal>1</ordinal>
+              <family>clusters.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[clusters.csv_5E4BEAB2038449E8BEC2BB5C5572454B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>frequency</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[frequency]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>frequency</remote-alias>
+              <ordinal>2</ordinal>
+              <family>clusters.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[clusters.csv_5E4BEAB2038449E8BEC2BB5C5572454B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>monetary</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[monetary]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>monetary</remote-alias>
+              <ordinal>3</ordinal>
+              <family>clusters.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[clusters.csv_5E4BEAB2038449E8BEC2BB5C5572454B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cluster</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[cluster]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cluster</remote-alias>
+              <ordinal>4</ordinal>
+              <family>clusters.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[clusters.csv_5E4BEAB2038449E8BEC2BB5C5572454B]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='100' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;中国&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='clusters.csv' id='clusters.csv_5E4BEAB2038449E8BEC2BB5C5572454B'>
+            <properties context=''>
+              <relation connection='textscan.0jf93lf16y714a15sycvz03s8610' name='clusters.csv' table='[clusters#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+                  <column datatype='integer' name='user_id' ordinal='0' />
+                  <column datatype='integer' name='recency' ordinal='1' />
+                  <column datatype='integer' name='frequency' ordinal='2' />
+                  <column datatype='integer' name='monetary' ordinal='3' />
+                  <column datatype='integer' name='cluster' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='sampling' inline='true' name='federated.1abdqra0vt099h1ckny1d1kx76cs' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='clusters' name='textscan.079932i1vx28ux16obx351sfvcxv'>
+            <connection class='textscan' directory='C:/Documents/PyFiles/tbanalysis/data/analytics' filename='clusters.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='sampling' name='textscan.1hccjod1tgq2m11917heb1esfkkp'>
+            <connection class='textscan' directory='C:/Documents/PyFiles/tbanalysis/data/processed' filename='sampling.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.079932i1vx28ux16obx351sfvcxv' name='clusters.csv' table='[clusters#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+              <column datatype='integer' name='user_id' ordinal='0' />
+              <column datatype='integer' name='recency' ordinal='1' />
+              <column datatype='integer' name='frequency' ordinal='2' />
+              <column datatype='integer' name='monetary' ordinal='3' />
+              <column datatype='integer' name='cluster' ordinal='4' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1hccjod1tgq2m11917heb1esfkkp' name='sampling.csv' table='[sampling#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+              <column datatype='integer' name='user_id' ordinal='0' />
+              <column datatype='integer' name='item_id' ordinal='1' />
+              <column datatype='integer' name='category_id' ordinal='2' />
+              <column datatype='string' name='behavior' ordinal='3' />
+              <column datatype='datetime' name='timestamp' ordinal='4' />
+              <column datatype='date' name='date' ordinal='5' />
+              <column datatype='integer' name='hour' ordinal='6' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[behavior]' value='[sampling.csv].[behavior]' />
+          <map key='[category_id]' value='[sampling.csv].[category_id]' />
+          <map key='[cluster]' value='[clusters.csv].[cluster]' />
+          <map key='[date]' value='[sampling.csv].[date]' />
+          <map key='[frequency]' value='[clusters.csv].[frequency]' />
+          <map key='[hour]' value='[sampling.csv].[hour]' />
+          <map key='[item_id]' value='[sampling.csv].[item_id]' />
+          <map key='[monetary]' value='[clusters.csv].[monetary]' />
+          <map key='[recency]' value='[clusters.csv].[recency]' />
+          <map key='[timestamp]' value='[sampling.csv].[timestamp]' />
+          <map key='[user_id (sampling.csv)]' value='[sampling.csv].[user_id]' />
+          <map key='[user_id]' value='[clusters.csv].[user_id]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[clusters.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;zh_Hans_CN&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¥&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;zh_CN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[sampling.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;zh_Hans_CN&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¥&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;zh_CN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[user_id]</local-name>
+            <parent-name>[clusters.csv]</parent-name>
+            <remote-alias>user_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>recency</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[recency]</local-name>
+            <parent-name>[clusters.csv]</parent-name>
+            <remote-alias>recency</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frequency</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frequency]</local-name>
+            <parent-name>[clusters.csv]</parent-name>
+            <remote-alias>frequency</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>monetary</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[monetary]</local-name>
+            <parent-name>[clusters.csv]</parent-name>
+            <remote-alias>monetary</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cluster</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cluster]</local-name>
+            <parent-name>[clusters.csv]</parent-name>
+            <remote-alias>cluster</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[user_id (sampling.csv)]</local-name>
+            <parent-name>[sampling.csv]</parent-name>
+            <remote-alias>user_id</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>item_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[item_id]</local-name>
+            <parent-name>[sampling.csv]</parent-name>
+            <remote-alias>item_id</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[category_id]</local-name>
+            <parent-name>[sampling.csv]</parent-name>
+            <remote-alias>category_id</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>behavior</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[behavior]</local-name>
+            <parent-name>[sampling.csv]</parent-name>
+            <remote-alias>behavior</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>timestamp</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[timestamp]</local-name>
+            <parent-name>[sampling.csv]</parent-name>
+            <remote-alias>timestamp</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[sampling.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hour</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[hour]</local-name>
+            <parent-name>[sampling.csv]</parent-name>
+            <remote-alias>hour</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='clusters.csv' datatype='table' name='[__tableau_internal_object_id__].[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]' role='measure' type='quantitative' />
+      <column caption='sampling.csv' datatype='table' name='[__tableau_internal_object_id__].[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]' role='measure' type='quantitative' />
+      <column caption='Behavior' datatype='string' name='[behavior]' role='dimension' type='nominal' />
+      <column caption='Category Id' datatype='integer' name='[category_id]' role='dimension' type='ordinal' />
+      <column caption='Cluster' datatype='integer' name='[cluster]' role='measure' type='quantitative' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Frequency' datatype='integer' name='[frequency]' role='measure' type='quantitative' />
+      <column caption='Hour' datatype='integer' name='[hour]' role='measure' type='quantitative' />
+      <column caption='Item Id' datatype='integer' name='[item_id]' role='dimension' type='ordinal' />
+      <column caption='Monetary' datatype='integer' name='[monetary]' role='measure' type='quantitative' />
+      <column caption='Recency' datatype='integer' name='[recency]' role='measure' type='quantitative' />
+      <column caption='Timestamp' datatype='datetime' name='[timestamp]' role='dimension' type='ordinal' />
+      <column caption='User Id (Sampling.Csv)' datatype='integer' name='[user_id (sampling.csv)]' role='dimension' type='ordinal' />
+      <column caption='User Id' datatype='integer' name='[user_id]' role='dimension' type='ordinal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='zh_CN' class='hyper' dbname='C:/Users/zhenruyi/AppData/Local/Temp/TableauTemp/#TableauTemp_02nywxj1ybq1vo1h5d4zu1crs72o.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/20/2025 05:54:45 PM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='clusters.csv_875294B2EADB49D7A3003EC2BD36D66B' table='[Extract].[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]' type='table' />
+            <relation name='sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8' table='[Extract].[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]' type='table' />
+          </relation>
+          <cols>
+            <map key='[behavior]' value='[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8].[behavior]' />
+            <map key='[category_id]' value='[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8].[category_id]' />
+            <map key='[cluster]' value='[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B].[cluster]' />
+            <map key='[date]' value='[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8].[date]' />
+            <map key='[frequency]' value='[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B].[frequency]' />
+            <map key='[hour]' value='[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8].[hour]' />
+            <map key='[item_id]' value='[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8].[item_id]' />
+            <map key='[monetary]' value='[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B].[monetary]' />
+            <map key='[recency]' value='[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B].[recency]' />
+            <map key='[timestamp]' value='[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8].[timestamp]' />
+            <map key='[user_id (sampling.csv)]' value='[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8].[user_id]' />
+            <map key='[user_id]' value='[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B].[user_id]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>user_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[user_id]</local-name>
+              <parent-name>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</parent-name>
+              <remote-alias>user_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>clusters.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>165675</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>recency</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[recency]</local-name>
+              <parent-name>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</parent-name>
+              <remote-alias>recency</remote-alias>
+              <ordinal>1</ordinal>
+              <family>clusters.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>frequency</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[frequency]</local-name>
+              <parent-name>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</parent-name>
+              <remote-alias>frequency</remote-alias>
+              <ordinal>2</ordinal>
+              <family>clusters.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>monetary</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[monetary]</local-name>
+              <parent-name>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</parent-name>
+              <remote-alias>monetary</remote-alias>
+              <ordinal>3</ordinal>
+              <family>clusters.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cluster</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[cluster]</local-name>
+              <parent-name>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</parent-name>
+              <remote-alias>cluster</remote-alias>
+              <ordinal>4</ordinal>
+              <family>clusters.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>user_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[user_id (sampling.csv)]</local-name>
+              <parent-name>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</parent-name>
+              <remote-alias>user_id</remote-alias>
+              <ordinal>5</ordinal>
+              <family>sampling.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2187780</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>item_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[item_id]</local-name>
+              <parent-name>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</parent-name>
+              <remote-alias>item_id</remote-alias>
+              <ordinal>6</ordinal>
+              <family>sampling.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1360186</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>category_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[category_id]</local-name>
+              <parent-name>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</parent-name>
+              <remote-alias>category_id</remote-alias>
+              <ordinal>7</ordinal>
+              <family>sampling.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>15748</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>behavior</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[behavior]</local-name>
+              <parent-name>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</parent-name>
+              <remote-alias>behavior</remote-alias>
+              <ordinal>8</ordinal>
+              <family>sampling.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>timestamp</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[timestamp]</local-name>
+              <parent-name>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</parent-name>
+              <remote-alias>timestamp</remote-alias>
+              <ordinal>9</ordinal>
+              <family>sampling.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2177053</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>10</ordinal>
+              <family>sampling.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>16</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>hour</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[hour]</local-name>
+              <parent-name>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</parent-name>
+              <remote-alias>hour</remote-alias>
+              <ordinal>11</ordinal>
+              <family>sampling.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;中国&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='clusters.csv' id='clusters.csv_875294B2EADB49D7A3003EC2BD36D66B'>
+            <properties context=''>
+              <relation connection='textscan.079932i1vx28ux16obx351sfvcxv' name='clusters.csv' table='[clusters#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+                  <column datatype='integer' name='user_id' ordinal='0' />
+                  <column datatype='integer' name='recency' ordinal='1' />
+                  <column datatype='integer' name='frequency' ordinal='2' />
+                  <column datatype='integer' name='monetary' ordinal='3' />
+                  <column datatype='integer' name='cluster' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='clusters.csv_875294B2EADB49D7A3003EC2BD36D66B' table='[Extract].[clusters.csv_875294B2EADB49D7A3003EC2BD36D66B]' type='table' />
+            </properties>
+          </object>
+          <object caption='sampling.csv' id='sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8'>
+            <properties context=''>
+              <relation connection='textscan.1hccjod1tgq2m11917heb1esfkkp' name='sampling.csv' table='[sampling#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+                  <column datatype='integer' name='user_id' ordinal='0' />
+                  <column datatype='integer' name='item_id' ordinal='1' />
+                  <column datatype='integer' name='category_id' ordinal='2' />
+                  <column datatype='string' name='behavior' ordinal='3' />
+                  <column datatype='datetime' name='timestamp' ordinal='4' />
+                  <column datatype='date' name='date' ordinal='5' />
+                  <column datatype='integer' name='hour' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8' table='[Extract].[sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[user_id]' />
+              <expression op='[user_id (sampling.csv)]' />
+            </expression>
+            <first-end-point object-id='clusters.csv_875294B2EADB49D7A3003EC2BD36D66B' />
+            <second-end-point object-id='sampling.csv_F31C5299E67C42EE8F35E7C001CCEEB8' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='分布图'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='clusters' name='federated.1mf4fen0q6p3y4172lyvc0l6wdpg' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1mf4fen0q6p3y4172lyvc0l6wdpg'>
+            <column-instance column='[frequency]' derivation='Avg' name='[avg:frequency:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[recency]' derivation='Avg' name='[avg:recency:qk]' pivot='key' type='quantitative' />
+            <column caption='Cluster' datatype='integer' name='[cluster]' role='measure' type='quantitative' />
+            <column-instance column='[user_id]' derivation='Count' name='[cnt:user_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Frequency' datatype='integer' name='[frequency]' role='measure' type='quantitative' />
+            <column-instance column='[cluster]' derivation='None' name='[none:cluster:qk]' pivot='key' type='quantitative' />
+            <column caption='Recency' datatype='integer' name='[recency]' role='measure' type='quantitative' />
+            <column caption='User Id' datatype='integer' name='[user_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1mf4fen0q6p3y4172lyvc0l6wdpg].[none:cluster:qk]' />
+              <lod column='[federated.1mf4fen0q6p3y4172lyvc0l6wdpg].[cnt:user_id:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1mf4fen0q6p3y4172lyvc0l6wdpg].[avg:recency:qk]</rows>
+        <cols>[federated.1mf4fen0q6p3y4172lyvc0l6wdpg].[avg:frequency:qk]</cols>
+      </table>
+      <simple-id uuid='{8C4BDFB4-0FA9-4CFB-BF13-AA25FD436759}' />
+    </worksheet>
+    <worksheet name='行为计数'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sampling' name='federated.1abdqra0vt099h1ckny1d1kx76cs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1abdqra0vt099h1ckny1d1kx76cs'>
+            <column caption='Behavior' datatype='string' name='[behavior]' role='dimension' type='nominal' />
+            <column-instance column='[behavior]' derivation='Count' name='[cnt:behavior:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[behavior]' derivation='None' name='[none:behavior:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1abdqra0vt099h1ckny1d1kx76cs].[none:behavior:nk]</rows>
+        <cols>[federated.1abdqra0vt099h1ckny1d1kx76cs].[cnt:behavior:qk]</cols>
+      </table>
+      <simple-id uuid='{B50DA42C-3AB0-4BE2-821F-92790819D3F8}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='51'>
+    <window class='worksheet' name='行为计数'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1abdqra0vt099h1ckny1d1kx76cs].[none:behavior:nk]</field>
+            <field>[federated.1mf4fen0q6p3y4172lyvc0l6wdpg].[none:behavior:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{8C52749B-B5E8-4ABC-9000-D3C56B92FBFF}' />
+    </window>
+    <window class='worksheet' maximized='true' name='分布图'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.1mf4fen0q6p3y4172lyvc0l6wdpg].[none:cluster:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1mf4fen0q6p3y4172lyvc0l6wdpg].[none:cluster:qk]</field>
+            <field>[federated.1mf4fen0q6p3y4172lyvc0l6wdpg].[none:user_id (user_clusters.csv):ok]</field>
+            <field>[federated.1mf4fen0q6p3y4172lyvc0l6wdpg].[none:user_id:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{BE517804-EDCA-453D-9335-321A99BA7492}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='分布图' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='159' name='行为计数' width='192'>
+      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
+      BSCmKQAx7X9H71BX6u+2fQAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
