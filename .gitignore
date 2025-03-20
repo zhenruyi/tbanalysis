@@ -1,4 +1,4 @@
 .env
-data/raw/UserBehavior.csv
-data/processed/UserBehavior_sampled.csv
+data/raw/
+data/processed/
 .ipynb_checkpoints/
