@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 from src.utils.config import load_config
-from src.utils.database import create_db_connection, ensure_database_exists, write_to_database
+from src.utils.database import ensure_database_exists, write_to_database
 
 
 def load_raw_data(file_path):
